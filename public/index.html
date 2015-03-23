@@ -5,35 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Who Mows the Lawn?</title>
-    <!-- Added for map only right now -->
-    <!-- from here to-->
-    <link rel="stylesheet" href="bower_components/skeleton/css/normalize.css">
-    <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="/bower_components/skeleton/css/normalize.css">
+    <link rel="stylesheet" href="/bower_components/skeleton/css/skeleton.css">
+    <link rel="applications-settings-icon" sizes="128x128" href="/applications_settings.png">
     <style type="text/css">html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}</style>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC89pMvXMawUFTMTti64bZTangKFdfnh3g"></script>
-    <!--<script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: { lat: 36.124, lng: -86.725},
-          zoom: 14
-        };
-        var map = new google.maps.Map(document.getElementById('map-canvas'),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>-->
-    <!-- to here-->
     <link rel="stylesheet" href="css/main.css">
   </head>
+
   <body>
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <div class="container" id="map-canvas"><!-- id from google maps -->
-      <h1>Who Mows the Lawn?</h1>
+    <div class="container">
+      <div class="row">
+        <div class="one column">
+          <h1>one</h1>
+        </div>
+        <div class="ten columns">
+          <h1>Who Mows the Lawn?</h1>
+        </div>
+        <div class="one column">
+          <h1>one</h1>
+        </div>
+      </div>
+      <div class="row heading">
+        <div class="three columns">
+          <h2>Login</h2>
+        </div>
+        <div class="two columns">
+          <h2>settings</h2>
+        </div>
+        <div class="three columns">
+          <h2>About</h2>
+        </div>
+        <div class="four columns">
+          <input type="text" value="ZIP">
+          <input type="submit" value="GO">
+        </div>
+      </div>
+      <div class="row">
+        <div class="two columns">
+          <h1>one</h1>
+        </div>
+        <div class="ten columns" id="map-canvas" style="width:500px;height:380px;">
+        </div>
     </div>
-
     <script src="js/main.js"></script>
   </body>
 </html>
