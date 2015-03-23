@@ -1,4 +1,4 @@
-initialize();
+//initialize();
 
 function initialize() {
   var myLatlng = new google.maps.LatLng(36.124, -86.725);

@@ -1,10 +1,33 @@
+/*body {
+  max-width: 960px;
+  margin: auto;
+}*/
+
 h1 {
-  color: green;
+  color: white;
   text-align: center;
 }
 
 .heading {
-  background-color: green;
-  color: white;
-  border-radius: 5px;
+  background-color: white;
+  color: green;
+  border-radius: 5px 5px 0px 0px;
+  text-align: center;
+  padding-top: 1em;
+  /*max-width: 960px;*/
+  /*text-align: center;*/
+  /*margin: auto;*/
+}
+
+
+
+.bkgrnd {
+  background-image: url("../../Private/background-supersize.jpg");
+  background-size: 100%;
+}
+
+
+
+.zip {
+  max-width: 100px;
 }

@@ -8,50 +8,53 @@
     <link rel="stylesheet" href="/bower_components/skeleton/css/normalize.css">
     <link rel="stylesheet" href="/bower_components/skeleton/css/skeleton.css">
     <link rel="applications-settings-icon" sizes="128x128" href="/applications_settings.png">
-    <style type="text/css">html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}</style>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC89pMvXMawUFTMTti64bZTangKFdfnh3g"></script>
     <link rel="stylesheet" href="css/main.css">
   </head>
 
-  <body>
+  <body class="bkgrnd">
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+  <div class="section top">
     <div class="container">
       <div class="row">
-        <div class="one column">
-          <h1>one</h1>
-        </div>
-        <div class="ten columns">
+        <div class="twelve columns">
           <h1>Who Mows the Lawn?</h1>
         </div>
-        <div class="one column">
-          <h1>one</h1>
-        </div>
       </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
       <div class="row heading">
         <div class="three columns">
-          <h2>Login</h2>
-        </div>
-        <div class="two columns">
-          <h2>settings</h2>
+          <h5>Login</h5>
         </div>
         <div class="three columns">
-          <h2>About</h2>
+          <h5>Settings</h5>
         </div>
-        <div class="four columns">
-          <input type="text" value="ZIP">
+        <div class="three columns">
+          <h5>About</h5>
+        </div>
+        <div class="three columns go_button">
+          <input type="text" value="ZIP" class="zip">
           <input type="submit" value="GO">
         </div>
       </div>
-      <div class="row">
-        <div class="two columns">
-          <h1>one</h1>
-        </div>
-        <div class="ten columns" id="map-canvas" style="width:500px;height:380px;">
-        </div>
     </div>
+  </div>
+  <div class="section mapped">
+    <div class="container">
+      <div class="row">
+        <!-- <div class="two columns">
+          <h1>one</h1> -->
+        </div>
+        <div class="twelve columns" id="map-canvas" style="height:500px;">
+        </div>
+      </div>
+    </div>
+  </div>
     <script src="js/main.js"></script>
   </body>
 </html>
