@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="/bower_components/skeleton/css/normalize.css">
     <link rel="stylesheet" href="/bower_components/skeleton/css/skeleton.css">
     <link rel="applications-settings-icon" sizes="128x128" href="/applications_settings.png">
-    <link rel="stylesheet" href="css/main.css">
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC89pMvXMawUFTMTti64bZTangKFdfnh3g"></script>
+    <link rel="stylesheet" href="/public/css/main.css">
+    <!-- // <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC89pMvXMawUFTMTti64bZTangKFdfnh3g"></script> -->
   </head>
 
   <body class="bkgrnd">
@@ -29,7 +29,7 @@
     <div class="container">
       <div class="row heading">
         <div class="two columns">
-          <a href="html/login.html">Login</a>
+          <a href="login.html" class="selected">Login</a>
         </div>
         <div class="two columns">
           <a href="settings.html">Settings</a>
@@ -38,7 +38,7 @@
           <a href="about.html">About</a>
         </div>
         <div class="two columns">
-          <a href="index.html" class="selected">Map</a>
+          <a href="/public/index.html">Map</a>
         </div>
         <div class="three columns go_button">
           <input type="text" placeholder="ZIP" class="zip">
@@ -47,18 +47,34 @@
       </div>
     </div>
   </div>
-  <div class="section mapped">
+  <div class="section loginInput">
     <div class="container">
-      <div class="row">
-        <!-- <div class="two columns">
-          <h1>one</h1> -->
+      <div class="row login loginTop">
+        <div class="six columns">
+          <label class="inputTitles">Email:</label>
+          <input type="email" placeholder="Email Address" class="u-full-width" required>
         </div>
-        <div class="twelve columns" id="map-canvas" style="height:500px;">
+        <div class="six columns">
+          <label class="inputTitles">Password:</label>
+          <input type="password" placeholder="Password" class="u-full-width" required>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+  <!-- <div class="section login loginButtons"> -->
+    <div class="container">
+      <div class="row login loginBottom">
+        <div class="six columns">
+          <input class="button" type="submit" value="Submit">
+          <input class="button" type="submit" value="Register">
+          <input class="button" type="submit" value="Forgot Password">
+        </div>
+        <div class="six columns">
         </div>
       </div>
     </div>
   </div>
-    <script src="js/main.js"></script>
+    <script src="/public/js/main.js"></script>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/firebase/firebase.js"></script>
   </body>

@@ -16,6 +16,8 @@
     "tests"
   ],
   "devDependencies": {
-    "skeleton": "~2.0.4"
+    "skeleton": "~2.0.4",
+    "jquery": "~2.1.3",
+    "firebase": "~2.2.3"
   }
 }

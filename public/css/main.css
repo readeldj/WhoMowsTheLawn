@@ -8,18 +8,45 @@ h1 {
   text-align: center;
 }
 
+a:link {
+  padding: 5px 15px;
+  text-decoration: none;
+  font-size: 1.6em;
+  color: green;
+}
+
+a:visited {
+  color: green;
+}
+
+a:hover {
+  background-color: green;
+  color: white;
+}
+
+a.selected {
+  border-style: solid;
+  border-color: green;
+  border-radius: 5px;
+}
+
 .heading {
   background-color: white;
   color: green;
   border-radius: 5px 5px 0px 0px;
   text-align: center;
   padding-top: 1em;
+  border-bottom: solid;
+  border-color: green;
   /*max-width: 960px;*/
   /*text-align: center;*/
   /*margin: auto;*/
 }
 
-
+.go, .button {
+  background-color: green; /* turned off line 185 in skeleton.css*/
+  color: white; /* turned off line 176 in skeleton.css*/
+}
 
 .bkgrnd {
   background-image: url("../../Private/background-supersize.jpg");
@@ -30,4 +57,12 @@ h1 {
 
 .zip {
   max-width: 100px;
+}
+
+.login {
+  background-color: white;
+}
+
+.loginBottom {
+  border-radius: 0px 0px 5px 5px;
 }
