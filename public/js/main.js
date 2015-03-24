@@ -1,3 +1,4 @@
+'use strict';
 //initialize();
 
 function initialize() {
@@ -20,3 +21,14 @@ function initialize() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+
+var myFirebaseRef = new Firebase("https://whomowsthelawn.firebaseio.com/");
+
+function test() {
+  myFirebaseRef.push({
+    title: "Hello 111 World!",
+    author: "Firebase"
+  });
+}
+test();

@@ -43,6 +43,10 @@ a.selected {
   /*margin: auto;*/
 }
 
+.headingLogin, .headingSettings {
+  padding-bottom: 1em;
+}
+
 .go, .button {
   background-color: green; /* turned off line 185 in skeleton.css*/
   color: white; /* turned off line 176 in skeleton.css*/
@@ -59,10 +63,16 @@ a.selected {
   max-width: 100px;
 }
 
-.login {
+.login, .settings {
   background-color: white;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .loginBottom {
   border-radius: 0px 0px 5px 5px;
+}
+
+.row {
+
 }
