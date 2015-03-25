@@ -57,7 +57,9 @@ a.selected {
   background-size: 100%;
 }
 
-
+.settingsForm {
+  margin-bottom: 0; /*zero out due to skeleton default*/
+}
 
 .zip {
   max-width: 100px;

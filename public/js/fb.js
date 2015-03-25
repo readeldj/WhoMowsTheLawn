@@ -27,6 +27,8 @@ if (fb.getAuth()) {
   });
 }
 
+//this is the register call from the button click.
+//might need to rename this class a little better.
 $('.registerMe').click(function () {
   var $loginForm = $('.loginForm'),
       email      = $loginForm.find('[type="email"]').val(),
@@ -37,12 +39,14 @@ $('.registerMe').click(function () {
     if (err) {
       $('.error').text(err);
     } else {
-      //location.reload(true);
       $(location).attr('href','/public/index.html');
     }
   });
 });
 
+
+//this is the login call from the button click.
+//might need to rename this class a little better.
 $('.getinthere').click(function(event){
   var $loginForm = $('.loginForm'),
       email      = $loginForm.find('[type="email"]').val(),
@@ -55,18 +59,12 @@ $('.getinthere').click(function(event){
     if (err) {
       $('.error').text(err);
     } else {
-      //location.reload(true);
       $(location).attr('href','/public/index.html');
     }
   });
 });
 
-// This is the logout function. it appears to work just fine.
-$('.logout').click(function (){
-  fb.unauth();
-  location.reload(true);
-});
-
+// this function actually performs the register or login @ fb
 function registerAndLogin(obj, cb) {
   fb.createUser(obj, function(err) {
     if (!err) {
@@ -82,3 +80,9 @@ function registerAndLogin(obj, cb) {
     }
   });
 }
+
+// This is the logout function. it appears to work just fine.
+$('.logout').click(function (){
+  fb.unauth();
+  location.reload(true);
+});
