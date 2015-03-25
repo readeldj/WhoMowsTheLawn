@@ -23,7 +23,8 @@ function initialize() {
 google.maps.event.addDomListener(window, 'load', initialize);
 
 
-var myFirebaseRef = new Firebase("https://whomowsthelawn.firebaseio.com/");
+// var myFirebaseRef = new Firebase("https://whomowsthelawn.firebaseio.com/"),
+//                fb = new Firebase(myFirebaseRef);
 
 function test() {
   myFirebaseRef.push({
@@ -31,4 +32,4 @@ function test() {
     author: "Firebase"
   });
 }
-test();
+//test();

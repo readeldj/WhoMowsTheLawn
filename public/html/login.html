@@ -29,7 +29,8 @@
     <div class="container">
       <div class="row heading headingLogin">
         <div class="two columns">
-          <a href="login.html" class="selected">Login</a>
+          <a href="login.html" class="selected test1">Login</a>
+          <a href="login.html" class="selected test2 hidden">Logout</a>
         </div>
         <div class="two columns">
           <a href="settings.html">Settings</a>
@@ -48,34 +49,38 @@
     </div>
   </div>
   <div class="section loginInput">
-    <div class="container">
-      <div class="row login loginTop">
-        <div class="six columns">
-          <label class="inputTitles">Email:</label>
-          <input type="email" placeholder="Email Address" class="u-full-width" required>
-        </div>
-        <div class="six columns">
-          <label class="inputTitles">Password:</label>
-          <input type="password" placeholder="Password" class="u-full-width" required>
-        </div>
-      </div>
-    </div>
-  <!-- </div> -->
-  <!-- <div class="section login loginButtons"> -->
-    <div class="container">
-      <div class="row login loginBottom">
-        <div class="six columns">
-          <input class="button" type="submit" value="Submit">
-          <input class="button" type="submit" value="Register">
-          <input class="button" type="submit" value="Forgot Password">
-        </div>
-        <div class="six columns">
+    <form action="#" class="loginForm login">
+      <div class="container">
+        <div class="row loginRow loginTop">
+          <div class="six columns">
+            <label class="inputTitles">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email Address" class="u-full-width" required>
+          </div>
+          <div class="six columns">
+            <label class="inputTitles">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password" class="u-full-width" required>
+          </div>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
+    <!-- <div class="section login loginButtons"> -->
+      <div class="container">
+        <div class="row loginRow loginBottom">
+          <div class="six columns">
+            <input class="button getinthere" type="button" id="loginButton" value="Login">
+            <input class="button logout hidden" type="button" id="logoutButton" value="Logout">
+            <input class="button registerMe" type="button" id="registerButton" value="Register">
+            <input class="button" type="button" value="Forgot Password">
+          </div>
+          <div class="six columns">
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/firebase/firebase.js"></script>
     <script src="/public/js/main.js"></script>
+    <script src="/public/js/fb.js"></script>
   </body>
 </html>
