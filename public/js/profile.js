@@ -2,7 +2,29 @@
 
 var FIREBASE_URL = 'https://whomowsthelawn.firebaseio.com',
               fb = new Firebase(FIREBASE_URL),
-           $form = $('form');
+           $form = $('form')
+           token,
+      usersFbUrl;
+
+
+if (fb.getAuth()) {
+  // $('.login').remove();
+  // $('.app').toggleClass('hidden');
+  $('.test1').toggleClass('hidden');
+  $('.test2').toggleClass('hidden');
+
+  usersFbUrl = FIREBASE_URL + '/users/' + fb.getAuth().uid + '/data';
+  token = fb.getAuth().token;
+
+  $.get(usersFbUrl + '/users/' + fb.getAuth().uid + '/profile.json', function(data){
+    if(data !== null) {
+      Object.keys(data).forEach(function(uuid) {
+        //addProfileToTable(uuid, data[uuid]);
+        //showPetDiv();
+      });
+    }
+  });
+}
 
 $form.submit(function(evt){
    var $address   = $('input[name="address"]').val(),
@@ -25,7 +47,7 @@ $form.submit(function(evt){
                       rating: $rating,
                       comments: $comments };
 
-   var url  = 'https://whomowsthelawn.firebaseio.com/users.json';
+   var url  = usersFbUrl + '/profile.json?auth=' + token;
    var data = JSON.stringify(group);
    $.post(url, data, function(res){
     //  $tr.attr('data-uuid', res.name);

@@ -1,7 +1,9 @@
 'use strict';
 
 var FIREBASE_URL = 'https://whomowsthelawn.firebaseio.com',
-              fb = new Firebase(FIREBASE_URL);
+              fb = new Firebase(FIREBASE_URL),
+           token,
+      usersFbUrl;
 
 // $(document).ready(function () {
 //   $newProfile.click(function() {
@@ -17,11 +19,14 @@ if (fb.getAuth()) {
   $('.test1').toggleClass('hidden');
   $('.test2').toggleClass('hidden');
 
-  $.get(FIREBASE_URL + '/users/' + fb.getAuth().uid + '/profile.json', function(data){
+  usersFbUrl = FIREBASE_URL + '/users/' + fb.getAuth().uid + '/data';
+  token = fb.getAuth().token;
+
+  $.get(usersFbUrl + '/users/' + fb.getAuth().uid + '/profile.json', function(data){
     if(data !== null) {
       Object.keys(data).forEach(function(uuid) {
-        addProfileToTable(uuid, data[uuid]);
-        showPetDiv();
+        //addProfileToTable(uuid, data[uuid]);
+        //showPetDiv();
       });
     }
   });
@@ -44,6 +49,23 @@ $('.registerMe').click(function () {
   });
 });
 
+// this function actually performs the register and login @ fb
+function registerAndLogin(obj, cb) {
+  fb.createUser(obj, function(err) {
+    if (!err) {
+      fb.authWithPassword(obj, function (err, auth){
+        if (!err) {
+          cb(null, auth);
+        } else {
+          cb(err);
+        }
+      });
+    } else {
+      cb(err);
+    }
+  });
+}
+
 
 //this is the login call from the button click.
 //might need to rename this class a little better.
@@ -64,22 +86,7 @@ $('.getinthere').click(function(event){
   });
 });
 
-// this function actually performs the register or login @ fb
-function registerAndLogin(obj, cb) {
-  fb.createUser(obj, function(err) {
-    if (!err) {
-      fb.authWithPassword(obj, function (err, auth){
-        if (!err) {
-          cb(null, auth);
-        } else {
-          cb(err);
-        }
-      });
-    } else {
-      cb(err);
-    }
-  });
-}
+
 
 // This is the logout function. it appears to work just fine.
 $('.logout').click(function (){

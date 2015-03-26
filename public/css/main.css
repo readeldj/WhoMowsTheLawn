@@ -43,7 +43,7 @@ a.selected {
   /*margin: auto;*/
 }
 
-.headingLogin, .headingSettings {
+.headingLogin, .headingProfile {
   padding-bottom: 1em;
 }
 
@@ -57,7 +57,7 @@ a.selected {
   background-size: 100%;
 }
 
-.settingsForm {
+.profileForm {
   margin-bottom: 0; /*zero out due to skeleton default*/
 }
 
@@ -65,7 +65,7 @@ a.selected {
   max-width: 100px;
 }
 
-.loginRow, .loginBottom, .settings {
+.loginRow, .loginBottom, .profile {
   background-color: white;
   padding-right: 10px;
   padding-left: 10px;
