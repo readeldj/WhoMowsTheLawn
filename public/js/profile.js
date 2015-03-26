@@ -27,15 +27,15 @@ if (fb.getAuth()) {
 }
 
 $form.submit(function(evt){
-   var $address   = $('input[name="address"]').val(),
-       $city      = $('input[name="city"]').val(),
-       $state     = $('select[name="state"]').val(),
-       $zip       = $('input[name="zip"]').val(),
-       $price     = $('input[name="price"]').val(),
-       $website   = $('input[name="website"]').val(),
-       $facebook  = $('input[name="facebook"]').val(),
-       $rating    = $('select[name="rating"]').val(),
-       $comments  = $('textarea[name="comments"]').val();
+   var $address   = $('input[id="address"]').val(),
+       $city      = $('input[id="city"]').val(),
+       $state     = $('select[id="state"]').val(),
+       $zip       = $('input[id="zip"]').val(),
+       $price     = $('input[id="price"]').val(),
+       $website   = $('input[id="website"]').val(),
+       $facebook  = $('input[id="facebook"]').val(),
+       $rating    = $('select[id="rating"]').val(),
+       $comments  = $('textarea[id="comments"]').val();
 
    var group      = { address: $address,
                       city: $city,
