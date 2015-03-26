@@ -10,10 +10,10 @@ var FIREBASE_URL = 'https://whomowsthelawn.firebaseio.com',
 if (fb.getAuth()) {
   // $('.login').remove();
   // $('.app').toggleClass('hidden');
-  $('.test1').toggleClass('hidden');
-  $('.test2').toggleClass('hidden');
+  // $('.test1').toggleClass('hidden');
+  // $('.test2').toggleClass('hidden');
 
-  usersFbUrl = FIREBASE_URL + '/users/' + fb.getAuth().uid + '/data';
+  usersFbUrl = FIREBASE_URL + '/users/' + fb.getAuth().uid; //deleted  + '/data'
   token = fb.getAuth().token;
 
   $.get(usersFbUrl + '/users/' + fb.getAuth().uid + '/profile.json', function(data){
@@ -47,11 +47,17 @@ $form.submit(function(evt){
                       rating: $rating,
                       comments: $comments };
 
-   var url  = usersFbUrl + '/profile.json?auth=' + token;
-   var data = JSON.stringify(group);
-   $.post(url, data, function(res){
+   var ref = new Firebase("https://whomowsthelawn.firebaseio.com/users/");
+   var usersRef = ref.child(fb.getAuth().uid);
+   usersRef.set(group);
+
+
+
+   //var url  = usersFbUrl + '/profile.json'; //was usersFbUrl + '/profile.json?auth=' + token;
+   //var data = JSON.stringify(group);
+   //$.post(url, data, function(res){
     //  $tr.attr('data-uuid', res.name);
     //  $tbody.append($tr);
-   });
+   //});
    evt.preventDefault();
  });
