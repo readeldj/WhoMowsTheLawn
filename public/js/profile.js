@@ -6,6 +6,9 @@ var FIREBASE_URL = 'https://whomowsthelawn.firebaseio.com',
               fb = new Firebase(FIREBASE_URL),
            $form = $('form'),
       usersFbUrl;
+  var geocoder; //new
+  var LatLng = 0;
+  var coordinates;
 
 //this runs on loading of the js file.
 if (fb.getAuth()) {
@@ -43,6 +46,8 @@ $form.submit(function(evt){
        $rating    = $('select[id="rating"]').val(),
        $comments  = $('textarea[id="comments"]').val();
 
+   var $concatAddress = $('input[id="address"]').val() + ", " + $('input[id="city"]').val() + ", " + $('select[id="state"]').val();
+
    var group      = { address: $address,
                       city: $city,
                       state: $state,
@@ -51,11 +56,46 @@ $form.submit(function(evt){
                       website: $website,
                       facebook: $facebook,
                       rating: $rating,
-                      comments: $comments };
+                      comments: $comments, //};
+                      test: LatLng };
+
+
+
+   getCoordinates ($concatAddress, function(coordinates){
+     LatLng = (coordinates);
+   });
+
+
+  $.when(LatLng !== 0).then(function(X){
+     postDataToFB(group);
+   })
+
+   function getCoordinates (address, callback) {
+
+     var coords_obj;
+     geocoder   = new google.maps.Geocoder();
+     geocoder.geocode({ address: address}, function (results, status){
+       coords_obj = results[0].geometry.location;
+       coordinates = [coords_obj.k, coords_obj.D];
+       callback(coordinates);
+     });
+   }
+
+
+
 //I want to redo this so that it uses jquery/ajax so it's not fb specific so I can move it somewhere else later.
-   var ref = new Firebase("https://whomowsthelawn.firebaseio.com/users/");
-   var usersRef = ref.child(fb.getAuth().uid);
-   usersRef.set(group);
+
+  //  $.when(LatLng !== 0).then(function(){
+  //    console.log(LatLng);
+  //    usersRef.set(group);
+  //  });
+   function postDataToFB (group){
+     var ref = new Firebase("https://whomowsthelawn.firebaseio.com/users/");
+     var usersRef = ref.child(fb.getAuth().uid);
+     usersRef.set(group);
+   }
+
+
 
 
    evt.preventDefault();

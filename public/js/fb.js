@@ -5,13 +5,6 @@ var FIREBASE_URL = 'https://whomowsthelawn.firebaseio.com',
            token,
       usersFbUrl;
 
-// $(document).ready(function () {
-//   $newProfile.click(function() {
-//     $form.show();
-//     $addProfile.show();
-//     $newProfile.hide();
-//   });
-
 
 if (fb.getAuth()) {
   // $('.login').remove();
@@ -25,8 +18,6 @@ if (fb.getAuth()) {
   $.get(usersFbUrl + '/users/' + fb.getAuth().uid + '/profile.json', function(data){
     if(data !== null) {
       Object.keys(data).forEach(function(uuid) {
-        //addProfileToTable(uuid, data[uuid]);
-        //showPetDiv();
       });
     }
   });

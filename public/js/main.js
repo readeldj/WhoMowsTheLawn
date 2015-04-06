@@ -2,7 +2,8 @@
 //initialize();
 
 function initialize() {
-  var myLatlng = new google.maps.LatLng(36.124, -86.725);
+  var myLatlng = new google.maps.LatLng(36.124, -86.725);  //Schools location for testing.
+  //var myLatlng = new google.maps.LatLng([app:user-lat], [app:user-lon]);
   var mapOptions = {
     zoom: 14,
     center: myLatlng
@@ -29,7 +30,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 function test() {
   myFirebaseRef.push({
     title: "Hello 111 World!",
-    author: "Firebase"
+    author: "Devin"
   });
 }
 //test();
